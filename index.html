@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <style>
+    .container {
+        display: grid;
+        grid-template-rows: 2;
+        justify-self: center;
+    }
+    
+    html {
+        -moz-appearance: none 
+    }
+
+    /*body {
+        background-color: aqua;
+    }
+    */
 </style>
 <html>
     <head>
@@ -7,12 +21,12 @@
         <title> Google Homepage Rebuild</title>
     </head>
 
-    <body>
-        <p> does this even work? Yes it does </p>
+    <body class="container">
+        <p> Test Text </p>
         <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
-        alt="The Logo of Google" style="right: 10%;">
+        alt="The Logo of Google" style=" position:relative ;right: -250px; grid-row: 1;">
         <form action=""> 
-            <input type="text" style="bottom:40vh 40vw;">
+            <input type="text" style="position:relative ;right:-300px; grid-row: 2;">
         </form>
     </body> 
-</html>
+</html
