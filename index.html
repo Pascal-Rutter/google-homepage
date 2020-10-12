@@ -2,10 +2,28 @@
 <style>
     .container {
         display: grid;
-        grid-template-rows: 2;
-        justify-self: normal;
+        grid-template-rows: 4fr 2fr 8fr;
+        grid-template-areas: 
+        "head"
+        "main"
+        "footer";
     }
-    
+
+    .item-a {
+        grid-area: head;
+        align-self: flex-start;
+        background-color: whitesmoke;
+    }
+    .item-b {
+        grid-area: main;
+        justify-self: center;
+    }
+    .item-c {
+        grid-area: footer;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
     html {
         -moz-appearance: none 
     }
@@ -16,7 +34,6 @@
     */
     ul {
         list-style: none;
-        background-color: whitesmoke;
     }
     li {
         float: left;
@@ -25,7 +42,6 @@
     a {
         display: block;
         padding: 8px;
-
     }
     #LogInButton {
         background-color: blue;
@@ -39,23 +55,27 @@
     </head>
 
     <body class="container">
-        <ul>
-            <li><a href="">Über Google</a></li>
-            <li><a href="">Store</a></li>
-            <li><a href="">Gmail</a></li>
-            <li><a href="">Bilder</a></li>
-            <li><a id="LogInButton" href=""> Anmelden</a></li>
-        </ul>
+
+        <div id="navbar" class="item-a">
+            <ul>
+                <li><a href="">Über Google</a></li>
+                <li><a href="">Store</a></li>
+                <li><a href="">Gmail</a></li>
+                <li><a href="">Bilder</a></li>
+                <li><a id="LogInButton" href=""> Anmelden</a></li>
+            </ul>  
+        </div>
         
-        <div id="Searchfield" >
+        
+        <div id="Searchfield" class="item-b">
             <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
-        alt="The Logo of Google" style=" position:relative ;right: -250px; top: 200px; grid-row: 1;">
+        alt="The Logo of Google">
         <form action=""> 
-            <input type="text" style="width: 300px ;position:relative ; right:-240px; top: 200px; grid-row: 2;">
+            <input type="text" style="width: 300px">
         </form>
         </div>
 
-        <footer style="font-size:13px; bottom: 100px;">
+        <footer id ="footer" class="item-c" style="font-size:13px">
             <ul>
                 <li><a href="">Werbeprogramme</a></li>
                 <li><a href="">Unternehmen</a></li>
@@ -65,5 +85,6 @@
                 <li><a href="">Einstellungen</a></li>
             </ul>
         </footer>
+
     </body> 
 </html
